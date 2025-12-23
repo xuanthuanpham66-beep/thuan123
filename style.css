@@ -1,16 +1,49 @@
-h1 {
-    color: red; /* Màu chữ đỏ */
-    text-align: center; /* Căn giữa */
+/* Thiết lập cơ bản */
+* {
+    box-sizing: border-box; /* Quan trọng để padding và border không làm thay đổi kích thước phần tử */
+    margin: 0;
+    padding: 0;
 }
-p:first-of-type {
-    color: yellow; /* Màu chữ vàng */
-    font-size: 13px; /* Cỡ chữ 13 pixels */
-    font-family: Arial, sans-serif; /* Font Arial */
+body {
+    font-family: Arial, sans-serif;
+    padding: 10px;
 }
-p:last-of-type {
-    background-color: yellow; /* Màu nền vàng */
-    font-weight: bold; /* In đậm */
-    font-size: 13px; /* Cỡ chữ 13 pixels */
-    font-family: "Times New Roman", serif; /* Font Times New Roman */
-    padding: 5px; 
+h1, p {
+    margin: 10px 0;
+    padding-left: 10px;
+}
+/* Các phần tử chính: Header, Footer */
+.header, .footer {
+    background-color: #f1f1f1; /* Nền xám nhạt */
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin-bottom: 5px; /* Khoảng cách với phần tử kế tiếp */
+}
+/* Footer có thể đậm hơn */
+.footer {
+    margin-top: 5px;
+    background-color: #ddd;
+}
+/* Các cột trong Row */
+.column {
+    float: left; /* Đặt cột sang trái */
+    width: 33.33%; /* Chia đều 3 cột */
+    padding: 15px;
+    background-color: white; 
+    border: 1px solid #ddd; /* Viền mỏng để phân biệt */
+    height: 300px; /* Chiều cao cố định cho mục đích minh họa */
+}
+/* Clearfix để "dọn dẹp" float sau các cột */
+.row::after {
+    content: "";
+    display: table;
+    clear: both; /* Thuộc tính quan trọng để container bao bọc các cột */
+}
+/* Responsive Layout: Bố cục sẽ xếp chồng lên nhau khi màn hình nhỏ hơn 600px */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%; /* Chiếm toàn bộ chiều rộng */
+        height: auto; /* Chiều cao tự động */
+    }
 }
