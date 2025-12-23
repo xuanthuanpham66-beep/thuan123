@@ -1,40 +1,16 @@
-/* Thiết lập cơ bản */
-* {
-    box-sizing: border-box; /* Rất quan trọng cho Float */
-    margin: 0;
-    padding: 0;
-}
-body {
-    font-family: Arial, sans-serif;
+/* The parent container */
+.day {
+    display: flex;
+    background-color: #2196F3; /* Blue background */
     padding: 10px;
 }
-/* Header và Footer */
-.header, .footer {
-    background-color: #f1f1f1;
+/* The flex items */
+.day > div {
+    background-color: #f1f1f1; /* Light grey background */
+    margin: 10px;
     padding: 20px;
-    text-align: center;
-    border: 1px solid #ccc;
-    margin-bottom: 5px;
-    margin-top: 5px;
-}
-/* Cài đặt Cột */
-.column {
-    float: left; /* Đặt cột sang trái */
-    width: 33.33%; /* Chia đều 3 cột (100% / 3) */
-    padding: 15px;
-    background-color: white; 
-    border: 1px solid #ddd; 
-    min-height: 250px; /* Chiều cao tối thiểu */
-}
-/* Clearfix để "dọn dẹp" float sau các cột */
-.row::after {
-    content: "";
-    display: table;
-    clear: both; 
-}
-/* Responsive: Xếp chồng khi màn hình nhỏ */
-@media screen and (max-width: 600px) {
-    .column {
-        width: 100%; /* Chiếm toàn bộ chiều rộng */
-    }
+    font-size: 25px;
+    flex: 1;                 /* Ensures items grow equally */
+    text-align: center;      /* Centers the text */
+    font-family: Arial, sans-serif;
 }
