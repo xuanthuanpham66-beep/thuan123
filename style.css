@@ -1,49 +1,49 @@
 /* Thiết lập cơ bản */
-* {
-    box-sizing: border-box; /* Quan trọng để padding và border không làm thay đổi kích thước phần tử */
-    margin: 0;
-    padding: 0;
-}
 body {
     font-family: Arial, sans-serif;
+    margin: 0; /* Loại bỏ margin mặc định của body */
+    background-color: #f1f1f1; /* Thiết lập màu nền xám nhạt cho toàn bộ trang */
+}
+/* 1. Thanh điều hướng trên cùng (Topnav) */
+.topnav {
+    overflow: hidden; /* Quan trọng để bao bọc các item float */
+    background-color: #333; /* Màu nền đen đậm */
     padding: 10px;
 }
-h1, p {
-    margin: 10px 0;
-    padding-left: 10px;
-}
-/* Các phần tử chính: Header, Footer */
-.header, .footer {
-    background-color: #f1f1f1; /* Nền xám nhạt */
-    padding: 20px;
+.topnav a {
+    float: left; /* Đặt các liên kết nằm ngang */
+    color: white;
     text-align: center;
-    border: 1px solid #ccc;
-    margin-bottom: 5px; /* Khoảng cách với phần tử kế tiếp */
+    padding: 12px 14px;
+    text-decoration: none; /* Loại bỏ gạch chân mặc định của liên kết */
+    font-size: 16px;
+    margin-right: 5px; /* Khoảng cách giữa các liên kết */
 }
-/* Footer có thể đậm hơn */
+.topnav a:hover {
+    background-color: #555;
+}
+/* 2. Khu vực Nội dung chính (Content) */
+.content {
+    background-color: #e5e5e5; /* Màu nền xám nhạt hơn một chút so với body */
+    padding: 40px 20px;
+    text-align: left;
+    min-height: 400px; /* Đảm bảo khu vực nội dung đủ cao */
+    border-bottom: 1px solid #ddd; /* Đường viền mỏng phía dưới (tùy chọn) */
+}
+.content h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.content p {
+    font-size: 18px;
+    color: #666;
+}
+/* 3. Chân trang (Footer) */
 .footer {
-    margin-top: 5px;
-    background-color: #ddd;
-}
-/* Các cột trong Row */
-.column {
-    float: left; /* Đặt cột sang trái */
-    width: 33.33%; /* Chia đều 3 cột */
-    padding: 15px;
-    background-color: white; 
-    border: 1px solid #ddd; /* Viền mỏng để phân biệt */
-    height: 300px; /* Chiều cao cố định cho mục đích minh họa */
-}
-/* Clearfix để "dọn dẹp" float sau các cột */
-.row::after {
-    content: "";
-    display: table;
-    clear: both; /* Thuộc tính quan trọng để container bao bọc các cột */
-}
-/* Responsive Layout: Bố cục sẽ xếp chồng lên nhau khi màn hình nhỏ hơn 600px */
-@media screen and (max-width: 600px) {
-    .column {
-        width: 100%; /* Chiếm toàn bộ chiều rộng */
-        height: auto; /* Chiều cao tự động */
-    }
+    background-color: white; /* Màu nền trắng */
+    padding: 20px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
 }
